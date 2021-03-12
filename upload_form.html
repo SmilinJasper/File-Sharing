@@ -13,9 +13,9 @@
     <img class="wave" src="img/wave.png">
     <div class="container">
         <div class="img"></div>
-        <form class="upload-form" id="myForm">
-            <input id="upload-file" type="file" name="upload-file">
-            <button type="submit">Upload Files</button>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" id="file">
+            <input type="button" id="btn_uploadfile" value="Upload">
         </form>
-        <script type="text/javascript" src="js/upload_file.js"></script>
+        <script src="js/upload_file.js"></script>
 </body>

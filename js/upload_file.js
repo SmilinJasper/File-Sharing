@@ -1,18 +1,38 @@
-const uploadForm = document.querySelector(".upload-form");
-const uploadFile = document.querySelector("#upload-file");
+const uploadFileButton = document.querySelector("#btn_uploadfile");
+uploadFileButton.addEventListener("click", uploadFile);
+// Upload file
+function uploadFile() {
 
-//Uploading Files
+    var files = document.getElementById("file").files;
 
-uploadForm.addEventListener("submit", e => {
-    e.preventDefault();
+    if (files.length > 0) {
 
-    const endPoint = "upload.php";
-    const formData = new FormData();
+        var formData = new FormData();
+        formData.append("file", files[0]);
 
-    formData.append("upload-file", uploadFile.files[0]);
+        var xhttp = new XMLHttpRequest();
 
-    fetch(endPoint, {
-        method: "post",
-        body: formData
-    }).catch(console.error);
-})
+        // Set POST method and ajax file path
+        xhttp.open("POST", "ajaxfile.php", true);
+
+        // call on request changes state
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+
+                var response = this.responseText;
+                if (response == 1) {
+                    alert("Upload successfully.");
+                } else {
+                    alert("File not uploaded.");
+                }
+            }
+        };
+
+        // Send request with data
+        xhttp.send(formData);
+
+    } else {
+        alert("Please select a file");
+    }
+
+}
