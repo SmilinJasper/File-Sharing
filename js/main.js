@@ -37,7 +37,7 @@ const adminCredentials = {
 
 loginButton.addEventListener("click", e => {
     e.preventDefault();
-    if (usernameInput.value == adminCredentials.username && passwordInput.value == adminCredentials.password) window.location.href = "/upload.php";
+    if (usernameInput.value == adminCredentials.username && passwordInput.value == adminCredentials.password) window.location.href = "/upload_form.html";
     else loginErrorMessage.style.display = "block";
 });
 
