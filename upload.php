@@ -5,7 +5,7 @@ if(isset($_FILES['file']['name'])){
    $filename = $_FILES['file']['name'];
 
    // Location
-   $location = 'upload/'.$filename;
+   $location = 'uploads/'.$filename;
 
    // file extension
    $file_extension = pathinfo($location, PATHINFO_EXTENSION);
