@@ -1,5 +1,6 @@
 // Get HTML ELements
 
+const adminLoginForm = document.querySelector(".admin-login-form");
 const inputs = document.querySelectorAll(".input");
 const loginButton = document.querySelector(".login");
 const usernameInput = document.querySelector(".input-username");
@@ -35,10 +36,10 @@ const adminCredentials = {
 
 // Login button redirects to upload page or throws error
 
-loginButton.addEventListener("click", e => {
-    e.preventDefault();
-    if (usernameInput.value == adminCredentials.username && passwordInput.value == adminCredentials.password) window.location.href = "/upload_form.html";
+adminLoginForm.addEventListener("submit", e => {
+    if (usernameInput.value == adminCredentials.username && passwordInput.value == adminCredentials.password) return true;
     else loginErrorMessage.style.display = "block";
+    e.preventDefault();
 });
 
 // Remove error message when input fields are focused
