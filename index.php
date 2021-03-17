@@ -12,10 +12,12 @@ $files = scandir("uploads");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<ul class="nav-bar">
+<div class="nav-bar">
+<ul>
   <li><a class="active" href="index.php">Home</a></li>
   <li><a class="admin-login-nav" href="admin_login.html">Admin Login</a></li>
 </ul>
+</div>
 
 <img class="wave" src="img/wave.png">
 <main class="page-wrapper">
@@ -29,16 +31,23 @@ $files = scandir("uploads");
 for ($a = 2; $a < count($files); $a++)
 {
     ?>
-    <p>
-        <?php echo $files[$a]; ?>
+    <a class="view-document" href="evaluation_forms/<?php echo $files[$a]; ?>.html"><?php echo $files[$a]; ?></a>
 
+    <div class="downlaod-button">
         <a href="uploads/<?php echo $files[$a]; ?>" download="<?php echo $files[$a]; ?>">
             Download
         </a>
-    </p>
+</div>
+
     <?php
 }
 ?>
+
 </div>
+<div class="view-marklist-container">
+<form method="post" action="export.php">
+     <input type="submit" name="export" value="View Marklist" class="view-marklist-button">
+    </form>
+    </div>
 </main>
 </html>

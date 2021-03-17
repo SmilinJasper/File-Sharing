@@ -280,6 +280,37 @@ a:hover {
     .login-content {
         justify-content: center;
     }
+    .marks-input-container {
+        left: 2%;
+    }
+}
+
+.nav-bar a.active {
+    background: #eee
+}
+
+div.view-marklist-container {
+    float: right;
+}
+
+input.view-marklist-button {
+    border: 1px solid #36c1c8;
+    border-radius: 4px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    line-height: 1;
+    padding: 8px 12px;
+    -o-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    float: right;
+}
+
+input.view-marklist-button:hover {
+    background: #36c1c8;
+    color: #ffffff;
 }
 
 .upload-form-fieldset {
@@ -291,7 +322,7 @@ a:hover {
     top: 16px;
     width: fit-content;
     padding: 8px;
-    height: 270px;
+    height: 350px;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -303,9 +334,21 @@ a:hover {
     border-radius: 8px;
 }
 
-.downlaod-button {
-    width: fit-content;
-    float: right;
+.form-item {
+    padding-bottom: 8px;
+}
+
+.submit-button-container {
+    position: relative;
+    left: 75%;
+    margin-top: 10px;
+}
+
+#submit-button {
+    padding: 8px;
+    font-weight: bold;
+    border-radius: 8px;
+    background-color: white;
 }
 
 .delete-button {
@@ -317,4 +360,35 @@ a:hover {
 .view-document {
     display: initial;
     color: black;
+}
+
+.view-document:hover {
+    color: #555;
+}
+
+.marks-input-container {
+    float: left;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12.5%;
+    padding: 8px;
+    background-color: whitesmoke;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+form.marks-form {
+    width: 100px;
+    padding: 8px;
+}
+
+form.marks-form #marks {
+    border: 2px solid black;
+}
+
+.embedded-pdf-container {
+    float: right;
+    height: 100vh;
+    width: 50%;
 }
