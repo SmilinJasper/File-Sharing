@@ -5,7 +5,7 @@ $files = scandir("uploads");
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Staff Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
@@ -14,16 +14,16 @@ $files = scandir("uploads");
 
 <div class="nav-bar">
 <ul>
-  <li><a class="active" href="index.php">Home</a></li>
+  <li><a href="index.php">Home</a></li>
   <li><a href="admin_login.html">Admin Login</a></li>
-  <li><a href="staff_login.html">Staff Login</a></li>
+  <li><a class="active" href="staff_login.html">Staff Login</a></li>
 </ul>
 </div>
 
 <img class="wave" src="img/wave.png">
 <main class="page-wrapper">
 <header class="downloads-header">
-<h1 >DOWNLOADS</h1>
+<h1 >DASHBOARD</h1>
 </header>
 <div class="downloads-container">
 
@@ -32,7 +32,7 @@ $files = scandir("uploads");
 for ($a = 2; $a < count($files); $a++)
 {
     ?>
-    <?php echo $a-1?><a class="view-document" href="evaluation_forms/<?php echo $files[$a]; ?>.html"><?php echo $files[$a]; ?></a>
+    <a class="view-document" href="evaluation_forms/<?php echo $files[$a]; ?>.html"><?php echo $files[$a]; ?></a>
 
     <div class="downlaod-button">
         <a href="uploads/<?php echo $files[$a]; ?>" download="<?php echo $files[$a]; ?>">

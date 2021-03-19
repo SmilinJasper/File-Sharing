@@ -30,10 +30,6 @@ ul {
     background-color: #52D1A6;
 }
 
-a.admin-login-nav {
-    float: right;
-}
-
 li {
     border-right: 1px solid #bbb;
 }

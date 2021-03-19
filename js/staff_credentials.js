@@ -1,43 +1,22 @@
 // Get HTML ELements
 
-const adminLoginForm = document.querySelector(".admin-login-form");
-const inputs = document.querySelectorAll(".input");
+const staffLoginForm = document.querySelector(".staff-login-form");
 const loginButton = document.querySelector(".login");
 const usernameInput = document.querySelector(".input-username");
 const passwordInput = document.querySelector(".input-password");
 const loginErrorMessage = document.querySelector(".login-error-message");
 
-// Focus animation on input fields
-
-function addcl() {
-    let parent = this.parentNode.parentNode;
-    parent.classList.add("focus");
-}
-
-function remcl() {
-    let parent = this.parentNode.parentNode;
-    if (this.value == "") {
-        parent.classList.remove("focus");
-    }
-}
-
-
-inputs.forEach(input => {
-    input.addEventListener("focus", addcl);
-    input.addEventListener("blur", remcl);
-});
-
 // Object to store Admin credentials
 
-const adminCredentials = {
-    username: "admin",
-    password: "123@dmin"
+const staffCredentials = {
+    username: "staff1",
+    password: "123$t@ff"
 };
 
 // Login button redirects to upload page or throws error
 
-adminLoginForm.addEventListener("submit", e => {
-    if (usernameInput.value == adminCredentials.username && passwordInput.value == adminCredentials.password) return true;
+staffLoginForm.addEventListener("submit", e => {
+    if (usernameInput.value == staffCredentials.username && passwordInput.value == staffCredentials.password) return true;
     else loginErrorMessage.style.display = "block";
     e.preventDefault();
 });

@@ -12,6 +12,7 @@
 <ul>
   <li><a href="index.php">Home</a></li>
   <li><a class="admin-login-nav active" href="admin_login.html">Admin Login</a></li>
+  <li><a href="staff_login.html">Staff Login</a></li>
 </ul>
 </div>
 
@@ -51,7 +52,6 @@
                     </div>
 </div>
         </form>
-    
 </div>
 
 

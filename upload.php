@@ -28,6 +28,7 @@ $text = "<!DOCTYPE html>
 <ul>
   <li><a class='active' href='../index.php'>Home</a></li>
   <li><a class='admin-login-nav' href='../admin_login.html'>Admin Login</a></li>
+  <li><a href='staff_login.html'>Staff Login</a></li>
 </ul>
 </div>
 
