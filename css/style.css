@@ -23,7 +23,7 @@ li {
 }
 
 ul {
-    background-color: #32be8f;
+    background-color: #1E6AE1;
 }
 
 .nav-bar.active {
@@ -96,6 +96,7 @@ body {
 
 .img img {
     width: 500px;
+    filter: hue-rotate(45deg)
 }
 
 form {
@@ -229,7 +230,7 @@ a:hover {
     border-radius: 25px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    background-image: linear-gradient(to right, #1E6AE1, #36c1c8, #1c61ce);
     background-size: 200%;
     font-size: 1.2rem;
     color: #fff;
