@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins:600&display=swap' rel='stylesheet'>
+    <script src='https://kit.fontawesome.com/a81368914c.js'></script>
+    <link href='../css/style.css' rel='stylesheet'>
+    <title>Evaluation Form</title>
+</head>
+
+<body>
+<div class='nav-bar'>
+<ul>
+  <li><a class='active' href='../index.php'>Home</a></li>
+  <li><a class='admin-login-nav' href='../admin_login.html'>Admin Login</a></li>
+</ul>
+</div>
+
+<main class='page-wrapper'>
+<img class='wave' src='../img/wave.png'>
+<div class='marks-input-container'>
+        <form class='marks-form' action='send_marks.php' method='POST'>
+                            <div>
+                <label for='marks'>Marks:</label>
+                <input id='marks' name='marks' type='number' min='0' max='100'>
+                </div>
+                <div>
+                <input type='submit' value='OK'>
+                </div>
+        </form>
+    </div>
+    <div class='embedded-pdf-container'>
+    <embed src='../uploads/phdguideregulation.pdf' width='100%' height='100%'></embed></body>
+</div>
+</main>
+</html>
