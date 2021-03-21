@@ -1,5 +1,6 @@
 <?php
 
+/*
 // Getting uploaded file
 $file = $_FILES["file"];
 
@@ -51,22 +52,40 @@ $text = "<!DOCTYPE html>
 </main>
 </html>";
 
-file_put_contents("evaluation_forms/{$file["name"]}.html", $text, FILE_APPEND | LOCK_EX);
+file_put_contents("evaluation_forms/{$file["name"]}.html", $text, FILE_APPEND | LOCK_EX);*/
 
 
-include_once 'db.php';
-if(isset($_POST['submit']))
-{    
-     $reg_no = $_POST['reg-no'];
-     $name = $_POST['name'];
-     $subject = $_POST['subject'];
-     $date = $_POST['date'];
-     $sql = "INSERT INTO student_database VALUES ('$reg_no',$name','$subject','$date')";
-     if (mysqli_query($conn, $sql)) {
-        echo "New record has been added successfully !";
-     } else {
-        echo "Error: " . $sql . ":-" . mysqli_error($conn);
-     }
-     mysqli_close($conn);
-}
-?>;
+$conn = mysqli_connect("localhost", "root", "selvinjj", "student_data"); 
+          
+        // Check connection 
+        if($conn === false){ 
+            die("ERROR: Could not connect. " 
+                . mysqli_connect_error()); 
+        } 
+          
+        // Taking 4 values from the form data(input) 
+        $reg_no =  $_REQUEST['reg-no']; 
+        $name = $_REQUEST['name']; 
+        $subject =  $_REQUEST['subject']; 
+        $date = $_REQUEST['date']; 
+          
+        // Performing insert query execution 
+        // here our table name is student_database 
+        $sql = "INSERT INTO student_database  VALUES ('$reg_no',  
+            '$name','$subject','$date')"; 
+          
+        if(mysqli_query($conn, $sql)){ 
+            echo "<h3>data stored in a database successfully." 
+                . " Please browse your localhost php my admin" 
+                . " to view the updated data</h3>";  
+  
+            echo nl2br("\n$reg_no\n $name\n "
+                . "$subject\n $date"); 
+        } else{ 
+            echo "ERROR: Hush! Sorry $sql. " 
+                . mysqli_error($conn); 
+        } 
+          
+        // Close connection 
+        mysqli_close($conn); 
+        ?>

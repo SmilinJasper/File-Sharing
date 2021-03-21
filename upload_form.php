@@ -78,10 +78,5 @@ for ($a = 2; $a < count($files); $a++)
 }
 
 ?>
-<div class="view-marklist-container">
-<form method="post" action="export.php">
-     <input type="submit" name="export" value="View Marklist" class="view-marklist-button">
-    </form>
-    </div>
 </main>
 </html>
