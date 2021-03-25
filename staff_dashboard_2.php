@@ -29,9 +29,14 @@ $files = scandir("uploads");
 
    
 <?php
+//Connect to MySQL database
 $connect = mysqli_connect("localhost", "root", "", "student_data");
+
+//Get all info from database table
 $sql = "SELECT * FROM student_database";  
 $result = mysqli_query($connect, $sql);
+
+//Scan directory for uploads
 $files = scandir("uploads");
 ?>
 
@@ -46,6 +51,7 @@ $files = scandir("uploads");
                          <th>Attendance</th>  
                     </tr>
      <?php
+     //Display all info from database table and link to paper
      $index =count($files)-1;
      while($row = mysqli_fetch_array($result))  
      {  

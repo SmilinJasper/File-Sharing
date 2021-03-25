@@ -409,19 +409,71 @@ input.total-marks {
     margin-top: 10px;
 }
 
-.delete-button {
+div.paper-info-container {
+    position: relative;
+    top: 8px;
     width: fit-content;
-    float: right;
-    padding-right: 8px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px #dcdcdc;
+    padding: 8px;
 }
 
-.view-document {
-    display: initial;
-    color: black;
+div.paper-info-container header {
+    background: #52d1a6;
+    color: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 8px;
 }
 
-.view-document:hover {
-    color: #555;
+div.course-info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: right;
+    width: 310px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+div.course-info input {
+    height: 20px;
+    flex: 0 0 200px;
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+div.course-info {
+    border-bottom: 1px solid #d6d6d6;
+}
+
+div.paper-count-container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+div.uploaded-paper-count {
+    background: aliceblue;
+    padding: 8px;
+}
+
+div.checked-paper-count {
+    background: antiquewhite;
+    padding: 8px;
+}
+
+div.remaining-paper-count {
+    background: beige;
+    padding: 8px;
+}
+
+.check-papers-button {
+    margin-top: 8px;
+    text-align: center;
 }
 
 .paper-id {

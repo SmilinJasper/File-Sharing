@@ -1,4 +1,5 @@
 <?php 
+//Connect to MySQL database
 $conn = mysqli_connect("localhost", "root", "", "student_data"); 
           
 // Check connection 
@@ -7,7 +8,7 @@ if($conn === false){
         . mysqli_connect_error()); 
 } 
 
-
+//Send marks to row with paper's id
 $id = $_GET['id'];
 
      $totalMarks = $_REQUEST['total-marks'];
