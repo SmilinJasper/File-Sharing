@@ -272,8 +272,9 @@ a:hover {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    max-width: 400px;
+    width: 96%;
+    box-shadow: 0 0 20px rgb(0 0 0 / 15%);
     text-align: center;
 }
 
@@ -334,6 +335,8 @@ div.evaluation-form-container {
     float: left;
     margin-left: 9.75%;
     margin-top: 37px;
+    width: 47%;
+    max-width: 400px;
 }
 
 table td .question-number {
@@ -521,5 +524,11 @@ div.remaining-paper-count {
 @media screen and (max-width: 476px) {
     .submit-button-container {
         left: 77.5%;
+    }
+}
+
+@media screen and (max-width: 1010px) {
+    div.evaluation-form-container {
+        margin-left: 2%;
     }
 }
