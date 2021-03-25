@@ -27,7 +27,7 @@ $files = scandir("uploads");
 </header>
 <div class="downloads-container">
 
-   
+<div class="back-button"><input type="button" class="button" value="Back" onclick="history.back()"></div>   
 <?php
 //Connect to MySQL database
 $connect = mysqli_connect("localhost", "root", "", "student_data");

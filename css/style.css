@@ -272,8 +272,7 @@ a:hover {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    max-width: 400px;
-    width: 96%;
+    min-width: 400px;
     box-shadow: 0 0 20px rgb(0 0 0 / 15%);
     text-align: center;
 }
@@ -481,6 +480,11 @@ div.remaining-paper-count {
 
 .paper-id {
     display: hidden;
+}
+
+.evaluation-table {
+    max-width: 400px;
+    width: 96%;
 }
 
 .embedded-pdf-container {

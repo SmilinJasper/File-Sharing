@@ -86,7 +86,7 @@ $text = "<!DOCTYPE html>
 <img class='wave' src='../img/wave.png'>
 <div class='evaluation-form-container'>
     <body>
-        <table class='styled-table'>
+        <table class='styled-table evaluation-table'>
             <tr>
                 <th>Questions</th>
                 <th>Out of</th>
