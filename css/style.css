@@ -1,3 +1,14 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 ul.nav-bar {
     width: 100%;
 }
@@ -30,6 +41,10 @@ ul {
     background-color: #52D1A6;
 }
 
+.nav-bar a.active {
+    background: #eee
+}
+
 li {
     border-right: 1px solid #bbb;
 }
@@ -51,17 +66,6 @@ ul {
 
 header.downloads-header {
     text-align: center;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
 }
 
 .wave {
@@ -99,7 +103,7 @@ body {
     filter: hue-rotate(45deg)
 }
 
-form {
+form.login-form {
     width: 360px;
 }
 
@@ -160,7 +164,7 @@ form {
     bottom: -2px;
     width: 0%;
     height: 2px;
-    background-color: #38d39f;
+    background-color: #1E6AE1;
     transition: .4s;
 }
 
@@ -183,7 +187,7 @@ form {
 }
 
 .input-div.focus>.i>i {
-    color: #38d39f;
+    color: #1E6AE1;
 }
 
 .input-div>div>input {
@@ -252,7 +256,7 @@ a:hover {
 }
 
 @media screen and (max-width: 1000px) {
-    form {
+    form.login-form {
         width: 290px;
     }
     .login-content h2 {
@@ -264,37 +268,53 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 900px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-    .img {
-        display: none;
-    }
-    .wave {
-        display: none;
-    }
-    .login-content {
-        justify-content: center;
-    }
-    .marks-input-container {
-        left: 2%;
-    }
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
 }
 
-.nav-bar a.active {
-    background: #eee
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
 }
 
-div.view-marklist-container {
-    float: right;
+.styled-table th:first-of-type,
+.styled-table td:first-of-type {
+    padding: 12px 15px;
 }
 
-input.view-marklist-button {
+.styled-table th,
+.styled-table td {
+    padding: 0px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #36c1c8;
+}
+
+.styled-table tbody tr {
+    background-color: #ffffff;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #1c61ce;
+}
+
+.button {
     border: 1px solid #36c1c8;
     border-radius: 4px;
     background: #ffffff;
     cursor: pointer;
+    text-align: center;
     -webkit-appearance: none;
     line-height: 1;
     padding: 8px 12px;
@@ -302,12 +322,60 @@ input.view-marklist-button {
     -moz-transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
-    float: right;
+    outline: none;
 }
 
-input.view-marklist-button:hover {
+.button:hover {
     background: #36c1c8;
     color: #ffffff;
+}
+
+div.evaluation-form-container {
+    float: left;
+    margin-left: 9.75%;
+    margin-top: 37px;
+}
+
+table td .question-number {
+    font-weight: bold;
+}
+
+input.section-marks-input {
+    background: transparent;
+    border: none;
+    width: -webkit-fill-available;
+    outline: none;
+    text-align: center;
+}
+
+input.marks-input::-webkit-outer-spin-button,
+input.marks-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input.marks-input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.total-marks-container {
+    background: #1dcc88;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    padding-left: 8px;
+}
+
+input.total-marks {
+    text-align: start;
+    font-weight: bold;
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    outline: none;
 }
 
 .upload-form-fieldset {
@@ -319,7 +387,7 @@ input.view-marklist-button:hover {
     top: 16px;
     width: fit-content;
     padding: 8px;
-    height: 350px;
+    height: fit-content;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -337,15 +405,8 @@ input.view-marklist-button:hover {
 
 .submit-button-container {
     position: relative;
-    left: 75%;
+    left: 85%;
     margin-top: 10px;
-}
-
-#submit-button {
-    padding: 8px;
-    font-weight: bold;
-    border-radius: 8px;
-    background-color: white;
 }
 
 .delete-button {
@@ -363,29 +424,50 @@ input.view-marklist-button:hover {
     color: #555;
 }
 
-.marks-input-container {
-    float: left;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 12.5%;
-    padding: 8px;
-    background-color: whitesmoke;
-    border-radius: 8px;
-    border: 2px solid black;
-}
-
-form.marks-form {
-    width: 100px;
-    padding: 8px;
-}
-
-form.marks-form #marks {
-    border: 2px solid black;
+.paper-id {
+    display: hidden;
 }
 
 .embedded-pdf-container {
     float: right;
     height: 100vh;
     width: 50%;
+    margin-top: 11px;
+}
+
+.finalize-paper-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.reject-paper-button {
+    width: fit-content;
+    border: 1px solid #ca0606;
+    color: black;
+}
+
+.reject-paper-button:hover {
+    background: #ca0606;
+}
+
+@media screen and (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .img {
+        display: none;
+    }
+    .wave {
+        display: none;
+    }
+    .login-content {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 476px) {
+    .submit-button-container {
+        left: 77.5%;
+    }
 }
