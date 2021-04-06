@@ -37,7 +37,7 @@
 
 
 <?php
-$connect = mysqli_connect("localhost", "root", "", "student_database");
+$connect = mysqli_connect("sql111.epizy.com", "epiz_28308908", "tq4nOlJirw", "epiz_28308908_student_database");
 $sql = "SELECT * FROM student_exam_results";  
 $result = mysqli_query($connect, $sql);
 $files = scandir("uploads");

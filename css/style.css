@@ -249,8 +249,8 @@ a:hover {
     background-position: right;
 }
 
-.table-responsive {
-    overflow: scroll;
+div.table-responsive {
+    overflow: auto;
 }
 
 .styled-table {
