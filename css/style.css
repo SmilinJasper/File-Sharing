@@ -89,6 +89,7 @@ header.downloads-header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: -1;
 }
 
 .login-content {
@@ -250,7 +251,7 @@ a:hover {
 }
 
 .table-responsive {
-    overflow: scroll;
+    overflow: auto;
 }
 
 .styled-table {
