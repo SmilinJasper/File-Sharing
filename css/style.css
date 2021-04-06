@@ -381,6 +381,7 @@ input.total-marks {
     background-color: whitesmoke;
     margin-bottom: 24px;
     border-radius: 8px;
+    z-index: -1;
 }
 
 .form-item {
@@ -389,7 +390,7 @@ input.total-marks {
 
 .submit-button-container {
     position: relative;
-    left: 82.5%;
+    left: 84%;
     margin-top: 10px;
 }
 
