@@ -1,6 +1,6 @@
 <?php 
 //Connect to MySQL database
-$conn = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data"); 
+$conn = mysqli_connect("localhost", "root", "", "student_database"); 
           
 // Check connection 
 if($conn === false){ 
@@ -9,13 +9,13 @@ if($conn === false){
 } 
 
 //Get total no.of uploaded papers
-$result = mysqli_query($conn, "SELECT count(1) FROM student_database");
+$result = mysqli_query($conn, "SELECT count(1) FROM student_exam_results");
 $row = mysqli_fetch_array($result);
 
 $total = $row[0];
 
 //Get no.of checked papers
-$result = mysqli_query($conn, "SELECT count(*) from student_database where is_checked='Yes'");
+$result = mysqli_query($conn, "SELECT count(*) from student_exam_results where is_checked='Yes'");
 $row = mysqli_fetch_array($result);
 
 $checked = $row[0];
@@ -59,14 +59,16 @@ $remaining = $total - $checked;
 
         <div class="course-info">
     <label>
-  Course: <input type="text" name="dummy1" value="B.Sc" readonly/>
+  Course:
 </label>
+<input type="text" name="dummy1" value="B.Sc" readonly/>
 </div>
 
 <div class="course-info">
 <label>
-  Specialization: <input type="text" name="dummy2" value="-" readonly/>
+  Specialization:
 </label>
+<input type="text" name="dummy2" value="-" readonly/>
 </div>
 
     </div>

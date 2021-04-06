@@ -249,23 +249,8 @@ a:hover {
     background-position: right;
 }
 
-@media screen and (max-width: 1050px) {
-    .container {
-        grid-gap: 5rem;
-    }
-}
-
-@media screen and (max-width: 1000px) {
-    form.login-form {
-        width: 290px;
-    }
-    .login-content h2 {
-        font-size: 2.4rem;
-        margin: 8px 0;
-    }
-    .img img {
-        width: 400px;
-    }
+.table-responsive {
+    overflow: scroll;
 }
 
 .styled-table {
@@ -386,17 +371,13 @@ input.total-marks {
 }
 
 .upload-form-container {
+    display: table;
     top: 16px;
-    width: fit-content;
     padding: 8px;
-    height: fit-content;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     background-color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin-bottom: 24px;
     border-radius: 8px;
 }
@@ -407,14 +388,14 @@ input.total-marks {
 
 .submit-button-container {
     position: relative;
-    left: 85%;
+    left: 82.5%;
     margin-top: 10px;
 }
 
 div.paper-info-container {
     position: relative;
     top: 8px;
-    width: fit-content;
+    width: 310px;
     background: white;
     border-radius: 8px;
     box-shadow: 5px 5px 10px #dcdcdc;
@@ -427,6 +408,8 @@ div.paper-info-container header {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding: 8px;
+    text-align: center;
+    font-size: 0.8em;
 }
 
 div.course-info-container {
@@ -434,14 +417,13 @@ div.course-info-container {
     flex-direction: column;
     justify-content: flex-end;
     text-align: right;
-    width: 310px;
     line-height: 26px;
     margin-bottom: 10px;
 }
 
 div.course-info input {
     height: 20px;
-    flex: 0 0 200px;
+    width: 160px;
     margin-left: 10px;
     border: none;
     outline: none;
@@ -510,6 +492,25 @@ div.remaining-paper-count {
     background: #ca0606;
 }
 
+@media screen and (max-width: 1050px) {
+    .container {
+        grid-gap: 5rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    form.login-form {
+        width: 290px;
+    }
+    .login-content h2 {
+        font-size: 2.4rem;
+        margin: 8px 0;
+    }
+    .img img {
+        width: 400px;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .container {
         grid-template-columns: 1fr;
@@ -527,12 +528,18 @@ div.remaining-paper-count {
 
 @media screen and (max-width: 476px) {
     .submit-button-container {
-        left: 77.5%;
+        left: 73.5%;
     }
 }
 
 @media screen and (max-width: 1010px) {
     div.evaluation-form-container {
         margin-left: 2%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    table.styled-table {
+        font-size: 0.8em;
     }
 }

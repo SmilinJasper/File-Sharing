@@ -9,7 +9,7 @@ move_uploaded_file($file["tmp_name"], "uploads/" . $file["name"]);
 // Redirecting back
 header("Location: " . $_SERVER["HTTP_REFERER"]);
 
-$conn = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data"); 
+$conn = mysqli_connect("localhost", "root", "", "student_database"); 
           
         // Check connection 
         if($conn === false){ 
@@ -23,12 +23,12 @@ $conn = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data");
         $attendance = "Present";
                  
         // Performing insert query execution 
-        // here our table name is student_database 
-        $sql = "INSERT INTO student_database (is_checked,marks,attendance) VALUES ('$is_checked','$marks','$attendance')"; 
+        // here our table name is student_exam_results 
+        $sql = "INSERT INTO student_exam_results (is_checked,marks,attendance) VALUES ('$is_checked','$marks','$attendance')"; 
           
         if(mysqli_query($conn, $sql)){ 
             echo "<h3>data stored in a database successfully." 
-                . " Please browse your localhost php my admin" 
+                . " Please browse your ftpupload.net php my admin" 
                 . " to view the updated data</h3>";  
   
             echo nl2br("\n$reg_no\n $name\n "
@@ -42,7 +42,7 @@ $conn = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data");
 mysqli_close($conn); 
 
 //Connect Again
-$conn = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data"); 
+$conn = mysqli_connect("localhost", "root", "", "student_database"); 
           
         // Check connection 
         if($conn === false){ 
@@ -51,7 +51,7 @@ $conn = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data");
         } 
 
         //Get id of last entry in database
-        $result = mysqli_query($conn, 'SELECT id FROM student_database ORDER BY id DESC LIMIT 1');
+        $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
         if (mysqli_num_rows($result) > 0) {
            $last_id = mysqli_fetch_row($result);
         }

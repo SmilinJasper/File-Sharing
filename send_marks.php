@@ -1,6 +1,6 @@
 <?php 
 //Connect to MySQL database
-$conn = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data"); 
+$conn = mysqli_connect("localhost", "root", "", "student_database"); 
           
 // Check connection 
 if($conn === false){ 
@@ -12,7 +12,7 @@ if($conn === false){
 $id = $_GET['id'];
 
      $totalMarks = $_REQUEST['total-marks'];
-     $sql = "UPDATE student_database SET marks =  $totalMarks,
+     $sql = "UPDATE student_exam_results SET marks =  $totalMarks,
      is_checked ='Yes' WHERE id = $id";
      if (mysqli_query($conn, $sql)) {
       header("Location: mark_updated.html");

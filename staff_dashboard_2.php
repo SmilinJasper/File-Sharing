@@ -30,10 +30,10 @@ $files = scandir("uploads");
 <div class="back-button"><input type="button" class="button" value="Back" onclick="history.back()"></div>   
 <?php
 //Connect to MySQL database
-$connect = mysqli_connect("localhost", "root", "", "epiz_28308908_student_data");
+$connect = mysqli_connect("localhost", "root", "", "student_database");
 
 //Get all info from database table
-$sql = "SELECT * FROM student_database";  
+$sql = "SELECT * FROM student_exam_results";  
 $result = mysqli_query($connect, $sql);
 
 //Scan directory for uploads
