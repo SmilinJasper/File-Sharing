@@ -366,11 +366,6 @@ input.total-marks {
     outline: none;
 }
 
-.upload-form-fieldset {
-    padding: 8px;
-    border-radius: 8px;
-}
-
 .upload-form-container {
     display: table;
     top: 16px;
@@ -382,6 +377,11 @@ input.total-marks {
     margin-bottom: 24px;
     border-radius: 8px;
     z-index: -1;
+}
+
+.upload-form-fieldset {
+    padding: 8px;
+    border-radius: 8px;
 }
 
 .form-item {
