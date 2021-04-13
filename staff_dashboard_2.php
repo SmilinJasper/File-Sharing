@@ -30,7 +30,7 @@ $files = scandir("uploads");
 <div class="back-button"><input type="button" class="button" value="Back" onclick="history.back()"></div>   
 <?php
 //Connect to MySQL database
-$connect = mysqli_connect("sql111.epizy.com", "epiz_28308908", "tq4nOlJirw", "epiz_28308908_student_database");
+$connect = mysqli_connect("localhost", "root", "", "student_database");
 
 //Get all info from database table
 $sql = "SELECT * FROM student_exam_results";  
@@ -38,6 +38,8 @@ $result = mysqli_query($connect, $sql);
 
 //Scan directory for uploads
 $files = scandir("uploads");
+echo "$files[4]";
+
 ?>
 
 <br />
@@ -52,7 +54,7 @@ $files = scandir("uploads");
                     </tr>
      <?php
      //Display all info from database table and link to paper
-     $index =count($files)-1;
+     $index =2;
      while($row = mysqli_fetch_array($result))  
      {  
         echo "  
@@ -64,7 +66,7 @@ $files = scandir("uploads");
          <td>".$row['attendance']."</td>  
        </tr>  
         ";  
-        $index--;
+        $index++;
      }
      ?>
     </table></center>

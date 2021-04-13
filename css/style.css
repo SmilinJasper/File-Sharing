@@ -347,13 +347,13 @@ input.marks-input[type=number] {
 }
 
 .total-marks-container {
+    display: table;
     background: #1dcc88;
     border-radius: 8px;
     text-align: center;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    width: fit-content;
     padding-left: 8px;
 }
 
@@ -366,6 +366,10 @@ input.total-marks {
     outline: none;
 }
 
+body.upload-form-body {
+    overflow: hidden;
+}
+
 .upload-form-container {
     display: table;
     top: 16px;
@@ -376,7 +380,7 @@ input.total-marks {
     background-color: whitesmoke;
     margin-bottom: 24px;
     border-radius: 8px;
-    z-index: -1;
+    z-index: 0;
 }
 
 .upload-form-fieldset {
@@ -390,7 +394,7 @@ input.total-marks {
 
 .submit-button-container {
     position: relative;
-    left: 84%;
+    left: 82.5%;
     margin-top: 10px;
 }
 
@@ -467,13 +471,14 @@ div.remaining-paper-count {
 }
 
 .evaluation-table {
+    width: 50vw;
     max-width: 400px;
     width: 96%;
 }
 
 .embedded-pdf-container {
     float: right;
-    height: 100vh;
+    height: 94vh;
     width: 50%;
     margin-top: 11px;
 }

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+<body class="upload-form-body">
 <div class="nav-bar">
 <ul>
   <li><a class="admin-login-nav active" href="admin_login.html">Admin Login</a></li>
@@ -37,7 +38,7 @@
 
 
 <?php
-$connect = mysqli_connect("sql111.epizy.com", "epiz_28308908", "tq4nOlJirw", "epiz_28308908_student_database");
+$connect = mysqli_connect("localhost", "root", "", "student_database");
 $sql = "SELECT * FROM student_exam_results";  
 $result = mysqli_query($connect, $sql);
 $files = scandir("uploads");
@@ -72,4 +73,5 @@ $files = scandir("uploads");
     </table></center>
     </div>
    </main>
+   </body>
 </html>
