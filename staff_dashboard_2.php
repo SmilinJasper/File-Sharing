@@ -1,7 +1,3 @@
-<?php
-
-$files = scandir("uploads");
-?>
 <html>
 
 <head>
@@ -28,6 +24,7 @@ $files = scandir("uploads");
 <div class="downloads-container">
 
 <div class="back-button"><input type="button" class="button" value="Back" onclick="history.back()"></div>   
+
 <?php
 //Connect to MySQL database
 $connect = mysqli_connect("localhost", "root", "", "student_database");
@@ -37,8 +34,9 @@ $sql = "SELECT * FROM student_exam_results";
 $result = mysqli_query($connect, $sql);
 
 //Scan directory for uploads
-$files = scandir("uploads");
-echo "$files[4]";
+$files = chdir("uploads");
+array_multisort(array_map('filemtime', ($files = glob("*.{pdf}", GLOB_BRACE))), SORT_DESC, $files);
+$orderedFiles = array_reverse($files);
 
 ?>
 
@@ -53,14 +51,15 @@ echo "$files[4]";
                          <th>Attendance</th>  
                     </tr>
      <?php
+
      //Display all info from database table and link to paper
-     $index =2;
+     $index =0;
      while($row = mysqli_fetch_array($result))  
      {  
         echo "  
        <tr>  
          <td>".$row['id']."</td>  
-         <td><a class='button' href='evaluation_forms/".$files[$index].".html'>Check Answersheet</a></td>
+         <td><a class='button' href='evaluation_forms/".$orderedFiles[$index].".html'>Check Answersheet</a></td>
          <td>".$row['is_checked']."</td>  
          <td>".$row['marks']."</td>  
          <td>".$row['attendance']."</td>  
@@ -68,6 +67,10 @@ echo "$files[4]";
         ";  
         $index++;
      }
+
+     // Close connection 
+       mysqli_close($connect); 
+
      ?>
     </table></center>
     </div>

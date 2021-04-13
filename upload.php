@@ -44,13 +44,17 @@ $conn = mysqli_connect("localhost", "root", "", "student_database");
                 . mysqli_connect_error()); 
         } 
 
+        //Refresh MySQL database
+mysqli_refresh($conn, MYSQLI_REFRESH_TABLES);
+
         //Get id of last entry in database
         $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
+
                 if (mysqli_num_rows($result) > 0) {
            $last_id = mysqli_fetch_row($result);
 
-echo "$last_id[0]";
 $maxId = $last_id[0];
+
            //HTML Content of Evaluation Page
 $text = "<!DOCTYPE html>
 <html lang='en'>
@@ -63,6 +67,7 @@ $text = "<!DOCTYPE html>
     <link href='https://fonts.googleapis.com/css?family=Poppins:600&display=swap' rel='stylesheet'>
     <script src='https://kit.fontawesome.com/a81368914c.js'></script>
     <script defer src='../js/update_total_marks.js'></script>
+    <script defer src='../js/update_page.js'></script> 
     <link href='../css/style.css' rel='stylesheet'>
     <title>Evaluation Form</title>
 </head>
@@ -145,4 +150,5 @@ file_put_contents("evaluation_forms/{$file["name"]}.html", $text, FILE_APPEND | 
 
 // Redirecting back
 header("Location: " . $_SERVER["HTTP_REFERER"]);
+
 ?>

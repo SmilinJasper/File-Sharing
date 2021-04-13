@@ -38,10 +38,18 @@
 
 
 <?php
+//Connect to MySQL database
 $connect = mysqli_connect("localhost", "root", "", "student_database");
+
+//Get all info from database table
 $sql = "SELECT * FROM student_exam_results";  
 $result = mysqli_query($connect, $sql);
-$files = scandir("uploads");
+
+//Scan directory for uploads
+$files = chdir("uploads");
+array_multisort(array_map('filemtime', ($files = glob("*.{pdf}", GLOB_BRACE))), SORT_DESC, $files);
+$orderedFiles = array_reverse($files);
+
 ?>
 
 <br />
@@ -55,21 +63,28 @@ $files = scandir("uploads");
                          <th>Attendance</th>  
                     </tr>
      <?php
-     $index =count($files)-1;
+
+     //Display all info from database table and link to paper
+     $index =0;
      while($row = mysqli_fetch_array($result))  
      {  
         echo "  
        <tr>  
          <td>".$row['id']."</td>  
-         <td><a class='button' href='evaluation_forms/".$files[$index].".html'>Check Answersheet</a></td>
+         <td><a class='button' href='evaluation_forms/".$orderedFiles[$index].".html'>Check Answersheet</a></td>
          <td>".$row['is_checked']."</td>  
          <td>".$row['marks']."</td>  
          <td>".$row['attendance']."</td>  
        </tr>  
         ";  
-        $index--;
+        $index++;
      }
+
+     // Close connection 
+       mysqli_close($connect); 
+
      ?>
+
     </table></center>
     </div>
    </main>
