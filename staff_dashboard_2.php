@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
+<!--Navigation bar-->
 <div class="nav-bar">
 <ul>
   <li><a href="admin_login.html">Admin Login</a></li>
@@ -16,16 +17,22 @@
 </ul>
 </div>
 
+<!--Background image-->
 <img class="wave" src="img/wave.png">
+
+<!--Page wrapper-->
 <main class="page-wrapper">
-<header class="downloads-header">
+
+<!--Dashboard Header-->
+<header class="center">
 <h1 >DASHBOARD</h1>
 </header>
-<div class="downloads-container">
 
+<!--Back button-->
 <div class="back-button"><input type="button" class="button" value="Back" onclick="history.back()"></div>   
 
 <?php
+
 //Connect to MySQL database
 $connect = mysqli_connect("localhost", "root", "", "student_database");
 
@@ -41,6 +48,8 @@ $orderedFiles = array_reverse($files);
 ?>
 
 <br />
+
+<!--Table with answersheets info-->
 <div class="table-responsive">  
    <center> <table class="styled-table">
      <tr>  
@@ -52,7 +61,7 @@ $orderedFiles = array_reverse($files);
                     </tr>
      <?php
 
-     //Display all info from database table and link to paper
+     //Display all info from database table and link to answersheet
      $index =0;
      while($row = mysqli_fetch_array($result))  
      {  
@@ -75,8 +84,4 @@ $orderedFiles = array_reverse($files);
     </table></center>
     </div>
    </main>
-</html>
-
-</div>
-</main>
 </html>

@@ -64,7 +64,7 @@ ul {
     margin-top: 37px;
 }
 
-header.downloads-header {
+header.center {
     text-align: center;
 }
 
@@ -398,7 +398,7 @@ body.upload-form-body {
     margin-top: 10px;
 }
 
-div.paper-info-container {
+div.answersheets-info-container {
     position: relative;
     top: 8px;
     width: 310px;
@@ -408,7 +408,7 @@ div.paper-info-container {
     padding: 8px;
 }
 
-div.paper-info-container header {
+div.answersheets-info-container header {
     background: #52d1a6;
     color: white;
     border-top-left-radius: 8px;

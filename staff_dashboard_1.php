@@ -1,4 +1,5 @@
 <?php 
+
 //Connect to MySQL database
 $conn = mysqli_connect("localhost", "root", "", "student_database"); 
           
@@ -20,6 +21,7 @@ $row = mysqli_fetch_array($result);
 
 $checked = $row[0];
 
+//Close connection
 mysqli_close($conn);
 
 //Get no.of remaining papers
@@ -40,6 +42,7 @@ $remaining = $total - $checked;
 
 <body>
 
+<!--Navigation bar-->
 <div class="nav-bar">
 <ul>
   <li><a href="admin_login.html">Admin Login</a></li>
@@ -47,31 +50,38 @@ $remaining = $total - $checked;
 </ul>
 </div>
 
+<!--Background image-->
 <img class="wave" src="img/wave.png">
 
+<!--Page wrapper-->
 <main class="page-wrapper">
-<header class="downloads-header">
+
+<!--Dashboard Header-->
+<header class="center">
 <h1 >DASHBOARD</h1>
 </header>
-    <div class="paper-info-container">
-    <header><h1>COMPUTER SCIENCE</h1></header>
-    <div class="course-info-container">
 
+<!--Answersheets info-->
+    <div class="answersheets-info-container">
+    <header><h1>COMPUTER SCIENCE</h1></header>
+
+    <!--Course info-->
+    <div class="course-info-container">
         <div class="course-info">
     <label>
   Course:
 </label>
 <input type="text" name="dummy1" value="B.Sc" readonly/>
 </div>
-
 <div class="course-info">
 <label>
   Specialization:
 </label>
 <input type="text" name="dummy2" value="-" readonly/>
 </div>
-
     </div>
+
+    <!--Paper count info-->
     <div class="paper-count-container">
         <div class="uploaded-paper-count"><p>Uploaded</p>
         <p><?php echo $total; ?></p></div>
@@ -81,12 +91,12 @@ $remaining = $total - $checked;
         <p><?php echo $remaining; ?></p></div>
     </div>
 
+    <!--Check papers button-->
     <div class="check-papers-button">
         <a href="staff_dashboard_2.php" class="button">Check Papers</a>
     </div>
     </div>
+
     </main>
-
 </body>
-
 </html>

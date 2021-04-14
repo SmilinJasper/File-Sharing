@@ -10,6 +10,8 @@
 </head>
 
 <body class="upload-form-body">
+
+<!--Navigation bar-->
 <div class="nav-bar">
 <ul>
   <li><a class="admin-login-nav active" href="admin_login.html">Admin Login</a></li>
@@ -17,8 +19,13 @@
 </ul>
 </div>
 
+<!--Background image-->
 <img class="wave" src="img/wave.png">
+
+<!--Page wrapper-->
 <main class="page-wrapper">
+
+<!--Upload form for answersheet-->
 <div class="upload-form-container">
            <form class="upload-form" method="POST" action="upload.php" enctype="multipart/form-data">
                   <fieldset class="upload-form-fieldset">
@@ -36,8 +43,8 @@
         </form>
 </div>
 
-
 <?php
+
 //Connect to MySQL database
 $connect = mysqli_connect("localhost", "root", "", "student_database");
 
@@ -52,6 +59,7 @@ $orderedFiles = array_reverse($files);
 
 ?>
 
+<!--Table with answersheets info-->
 <br />
 <div class="table-responsive">  
    <center> <table class="styled-table">
@@ -64,7 +72,7 @@ $orderedFiles = array_reverse($files);
                     </tr>
      <?php
 
-     //Display all info from database table and link to paper
+     //Display all info from database table and link to answersheet
      $index =0;
      while($row = mysqli_fetch_array($result))  
      {  

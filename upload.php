@@ -14,7 +14,7 @@ $conn = mysqli_connect("localhost", "root", "", "student_database");
                 . mysqli_connect_error()); 
         } 
           
-        // Taking 4 values from the form data(input) 
+        // Assign values to data in MySQL table 
         $is_checked ="No"  ; 
         $marks = 0;
         $attendance = "Present";
@@ -44,15 +44,13 @@ $conn = mysqli_connect("localhost", "root", "", "student_database");
                 . mysqli_connect_error()); 
         } 
 
-        //Refresh MySQL database
-mysqli_refresh($conn, MYSQLI_REFRESH_TABLES);
-
         //Get id of last entry in database
         $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
 
                 if (mysqli_num_rows($result) > 0) {
            $last_id = mysqli_fetch_row($result);
 
+           //Store last id in variable
 $maxId = $last_id[0];
 
            //HTML Content of Evaluation Page
@@ -73,6 +71,7 @@ $text = "<!DOCTYPE html>
 </head>
 
 <body>
+
 <div class='nav-bar'>
 <ul>
   <li><a href='../admin_login.html'>Admin Login</a></li>
@@ -142,6 +141,7 @@ Total Score (Out of 50):
 </main>
 </html>";
 
+//Put evaluation form file in folder
 file_put_contents("evaluation_forms/{$file["name"]}.html", $text, FILE_APPEND | LOCK_EX);
         }
 
