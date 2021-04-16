@@ -258,7 +258,6 @@ a:hover {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 0.9em;
-    min-width: 400px;
     box-shadow: 0 0 20px rgb(0 0 0 / 15%);
     text-align: center;
 }
@@ -296,6 +295,7 @@ a:hover {
 }
 
 .button {
+    font-size: 1em;
     border: 1px solid #36c1c8;
     border-radius: 4px;
     background: #ffffff;
@@ -316,7 +316,7 @@ a:hover {
     color: #ffffff;
 }
 
-div.evaluation-form-container {
+.evaluation-form-container {
     float: left;
     margin-left: 9.75%;
     margin-top: 37px;
@@ -328,21 +328,22 @@ table td .question-number {
     font-weight: bold;
 }
 
-input.section-marks-input {
+.section-marks-input {
     background: transparent;
     border: none;
     width: -webkit-fill-available;
+    width: -moz-available;
     outline: none;
     text-align: center;
 }
 
-input.marks-input::-webkit-outer-spin-button,
-input.marks-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-input.marks-input[type=number] {
+input[type=number] {
     -moz-appearance: textfield;
 }
 
@@ -350,23 +351,27 @@ input.marks-input[type=number] {
     display: table;
     background: #1dcc88;
     border-radius: 8px;
-    text-align: center;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     padding-left: 8px;
 }
 
-input.total-marks {
+.total-marks {
+    width: 30px;
+    font-size: 1em;
     text-align: start;
     font-weight: bold;
-    font-size: 18px;
     background: transparent;
     border: none;
     outline: none;
 }
 
-body.upload-form-body {
+.upload-form-body {
+    overflow: hidden;
+}
+
+.evaluation-form-body {
     overflow: hidden;
 }
 
@@ -471,8 +476,7 @@ div.remaining-paper-count {
 }
 
 .evaluation-table {
-    width: 50vw;
-    max-width: 400px;
+    table-layout: fixed;
     width: 96%;
 }
 
@@ -483,7 +487,7 @@ div.remaining-paper-count {
     margin-top: 11px;
 }
 
-.finalize-paper-container {
+.finalize-paper-buttons-container {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
@@ -498,6 +502,9 @@ div.remaining-paper-count {
 .reject-paper-button:hover {
     background: #ca0606;
 }
+
+
+/* Media Queries */
 
 @media screen and (max-width: 1050px) {
     .container {
@@ -516,6 +523,9 @@ div.remaining-paper-count {
     .img img {
         width: 400px;
     }
+    .evaluation-form-container {
+        margin-left: 2%;
+    }
 }
 
 @media screen and (max-width: 900px) {
@@ -533,20 +543,21 @@ div.remaining-paper-count {
     }
 }
 
+@media screen and (max-width: 550px) {
+    .evaluation-form-container {
+        font-size: 0.8em;
+    }
+}
+
 @media screen and (max-width: 476px) {
+    .evaluation-form-container {
+        width: 85vw;
+        margin: 37px 7.5vw;
+    }
+    .embedded-pdf-container {
+        width: 100%;
+    }
     .submit-button-container {
         left: 73.5%;
-    }
-}
-
-@media screen and (max-width: 1010px) {
-    div.evaluation-form-container {
-        margin-left: 2%;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    table.styled-table {
-        font-size: 0.8em;
     }
 }

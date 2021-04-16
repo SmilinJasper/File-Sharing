@@ -84,7 +84,7 @@ $text = "<!DOCTYPE html>
 <main>
 <img class='wave' src='../img/wave.png'>
 <div class='evaluation-form-container'>
-    <body>
+    <body class='evaluation-form-body'>
         <table class='styled-table evaluation-table'>
             <tr>
                 <th>Questions</th>
@@ -122,6 +122,7 @@ $text = "<!DOCTYPE html>
                 <td><input type='number' class='section-marks-input' value='0' min='0' max='5'></td>
             </tr>
         </table>
+        <div class ='finish-paper-form-container'>
         <form action='../send_marks.php?id=".$maxId."' method='POST'>
         <div class='total-marks-container'>
             <label for='total-marks'>    
@@ -129,10 +130,11 @@ Total Score (Out of 50):
 </label>
             <input id='total-marks' name='total-marks' type='number' value='0' readonly min='0' max='30' class='total-marks'>
             </div>
-            <div class='finalize-paper-container'>
+            <div class='finalize-paper-buttons-container'>
             <input id='finish-paper' type='submit' value='Finish Paper' class='button'>
             <a href='../delete.php?name=".$file["name"]."&id=".$maxId."' class='button reject-paper-button'>Reject Paper</a>
         </form>
+        </div>
             </div>
 </div>
     <div class='embedded-pdf-container'>

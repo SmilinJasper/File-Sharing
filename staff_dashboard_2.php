@@ -17,6 +17,7 @@
 </ul>
 </div>
 
+<body>
 <!--Background image-->
 <img class="wave" src="img/wave.png">
 
@@ -84,4 +85,5 @@ $orderedFiles = array_reverse($files);
     </table></center>
     </div>
    </main>
+   </body>
 </html>
