@@ -316,14 +316,6 @@ a:hover {
     color: #ffffff;
 }
 
-.evaluation-form-container {
-    float: left;
-    margin-left: 9.75%;
-    margin-top: 37px;
-    width: 47%;
-    max-width: 400px;
-}
-
 table td .question-number {
     font-weight: bold;
 }
@@ -368,10 +360,6 @@ input[type=number] {
 }
 
 .upload-form-body {
-    overflow: hidden;
-}
-
-.evaluation-form-body {
     overflow: hidden;
 }
 
@@ -475,16 +463,31 @@ div.remaining-paper-count {
     display: hidden;
 }
 
+.evaluation-page-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 3rem;
+}
+
+.evaluation-form-container {
+    width: 25%;
+    font-size: .9em;
+}
+
 .evaluation-table {
     table-layout: fixed;
-    width: 96%;
+    width: 100%;
+    font-size: 1em;
 }
 
 .embedded-pdf-container {
-    float: right;
-    height: 94vh;
-    width: 50%;
-    margin-top: 11px;
+    height: 80vh;
+    width: 70%;
+}
+
+.finish-paper-form-container {
+    font-size: 0.9em;
 }
 
 .finalize-paper-buttons-container {
@@ -523,9 +526,6 @@ div.remaining-paper-count {
     .img img {
         width: 400px;
     }
-    .evaluation-form-container {
-        margin-left: 2%;
-    }
 }
 
 @media screen and (max-width: 900px) {
@@ -541,22 +541,39 @@ div.remaining-paper-count {
     .login-content {
         justify-content: center;
     }
-}
-
-@media screen and (max-width: 550px) {
     .evaluation-form-container {
         font-size: 0.8em;
     }
 }
 
-@media screen and (max-width: 476px) {
+@media screen and (max-width: 800px) {
     .evaluation-form-container {
-        width: 85vw;
-        margin: 37px 7.5vw;
+        font-size: 0.7em;
+    }
+    .finalize-paper-buttons-container {
+        flex-direction: column;
+        align-items: center;
+        grid-gap: .4em;
+    }
+}
+
+@media screen and (max-width:730px) {
+    .evaluation-page-wrapper {
+        flex-direction: column;
+        margin-top: 1rem;
     }
     .embedded-pdf-container {
+        height: 100vh;
         width: 100%;
     }
+    .evaluation-form-container {
+        width: 50%;
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+}
+
+@media screen and (max-width: 476px) {
     .submit-button-container {
         left: 73.5%;
     }

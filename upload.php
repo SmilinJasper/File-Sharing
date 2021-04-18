@@ -83,8 +83,13 @@ $text = "<!DOCTYPE html>
 
 <main>
 <img class='wave' src='../img/wave.png'>
+
+<div class = 'evaluation-page-wrapper'>
+<div class='embedded-pdf-container'>
+    <embed src='../uploads/{$file["name"]}' width='100%' height='100%'></embed>
+</div>
+
 <div class='evaluation-form-container'>
-    <body class='evaluation-form-body'>
         <table class='styled-table evaluation-table'>
             <tr>
                 <th>Questions</th>
@@ -136,10 +141,8 @@ Total Score (Out of 50):
         </form>
         </div>
             </div>
-</div>
-    <div class='embedded-pdf-container'>
-    <embed src='../uploads/{$file["name"]}' width='100%' height='100%'></embed></body>
-</div>
+            </div>
+            </body>
 </main>
 </html>";
 
