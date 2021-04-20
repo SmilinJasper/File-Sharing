@@ -250,6 +250,17 @@ a:hover {
     background-position: right;
 }
 
+.guest-login {
+    text-align: center;
+    display: grid;
+    place-items: center;
+    background-image: linear-gradient(to right, #4B88E7, #5ECED3, #4B88E7);
+}
+
+.guest-login:hover {
+    color: #fff;
+}
+
 .table-responsive {
     overflow: auto;
 }
@@ -460,7 +471,7 @@ div.remaining-paper-count {
 }
 
 .paper-id {
-    display: hidden;
+    display: none;
 }
 
 .evaluation-page-wrapper {
