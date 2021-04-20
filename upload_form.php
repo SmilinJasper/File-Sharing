@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-<body class="no-overflow">
+<body class="upload-form-body">
 
 <!--Navigation bar-->
 <div class="nav-bar">

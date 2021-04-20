@@ -1,4 +1,5 @@
 <?php 
+
 //Connect to MySQL database
 $conn = mysqli_connect("sql111.epizy.com", "epiz_28308908", "tq4nOlJirw", "epiz_28308908_student_database"); 
           
@@ -15,12 +16,12 @@ $id = $_POST['id'];
      $sql = "UPDATE student_exam_results SET marks =  $totalMarks,
      is_checked ='Yes' WHERE id = $id";
 
-     //Redirect to mark updated message if successful
+    //Close connection
+    mysqli_close($conn);
+
+     //Redirect to mark updated message
      if (mysqli_query($conn, $sql)) {
       header("Location: mark_updated.html");
-     } 
-
-     //Close connection
-     mysqli_close($conn);
+     }    
 
 ?>;
