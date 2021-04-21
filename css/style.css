@@ -376,7 +376,6 @@ input[type=number] {
 
 .upload-form-container {
     display: table;
-    min-width: 502px;
     top: 16px;
     padding: 8px;
     position: relative;
@@ -397,9 +396,12 @@ input[type=number] {
     padding-bottom: 8px;
 }
 
+input[type="file"] {
+    max-width: 293.33px;
+}
+
 .submit-button-container {
-    position: relative;
-    left: 82.5%;
+    float: right;
     margin-top: 10px;
 }
 
@@ -518,6 +520,11 @@ div.remaining-paper-count {
     background: #ca0606;
 }
 
+.next-button {
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
 
 /* Media Queries */
 
@@ -582,11 +589,5 @@ div.remaining-paper-count {
         width: 50%;
         font-size: 1em;
         margin-bottom: 8px;
-    }
-}
-
-@media screen and (max-width: 476px) {
-    .submit-button-container {
-        left: 73.5%;
     }
 }

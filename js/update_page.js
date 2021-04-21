@@ -1,12 +1,10 @@
-window.onload = () => {
-    if (window.localStorage) {
-        //Check for firstload varaiable, create one if not found, then refresh page
-        if (!localStorage.getItem('firstLoad')) {
-            localStorage['firstLoad'] = true;
-            window.location.reload();
-            return;
-        }
-        //Remove firsload variable if found
-        localStorage.removeItem('firstLoad');
+//Refresh page on first load
+window.onload = function() {
+    //considering there aren't any hashes in the urls already
+    if (!window.location.hash) {
+        //setting window location
+        window.location = window.location + '#loaded';
+        //using reload() method to reload web page
+        window.location = window.location;
     }
 }
