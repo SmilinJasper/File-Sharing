@@ -6,7 +6,7 @@ $file = $_FILES["file"];
 // Uploading in "uplaods" folder
 move_uploaded_file($file["tmp_name"], "uploads/" . $file["name"]);
 
-$conn = mysqli_connect("localhost","root","","student_database"); 
+$conn = mysqli_connect("sql111.epizy.com","epiz_28308908","tq4nOlJirw","epiz_28308908_student_database"); 
           
         // Check connection 
         if($conn === false){ 
@@ -36,7 +36,7 @@ $conn = mysqli_connect("localhost","root","","student_database");
 mysqli_close($conn); 
 
 //Connect Again
-$conn = mysqli_connect("localhost","root","","student_database"); 
+$conn = mysqli_connect("sql111.epizy.com","epiz_28308908","tq4nOlJirw","epiz_28308908_student_database"); 
           
         // Check connection 
         if($conn === false){ 

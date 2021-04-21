@@ -35,7 +35,7 @@
 <?php
 
 //Connect to MySQL database
-$connect = mysqli_connect("localhost","root","","student_database");
+$connect = mysqli_connect("sql111.epizy.com","epiz_28308908","tq4nOlJirw","epiz_28308908_student_database");
 
 //Get all info from database table
 $sql = "SELECT * FROM student_exam_results";  
