@@ -9,14 +9,15 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-ul.nav-bar {
+.nav-bar {
     width: 100%;
-}
-
-ul {
+    display: flex;
     list-style-type: none;
     margin: 0;
     padding: 0;
+    position: fixed;
+    top: 0;
+    background-color: #1E6AE1;
 }
 
 li {
@@ -33,15 +34,11 @@ li {
     background-color: #dddddd;
 }
 
-ul {
-    background-color: #1E6AE1;
+.nav-bar a:hover {
+    background: rgb(234, 234, 234);
 }
 
-.nav-bar.active {
-    background-color: #52D1A6;
-}
-
-.nav-bar a.active {
+a.active {
     background: #eee
 }
 
@@ -53,10 +50,8 @@ li:last-child {
     border-right: none;
 }
 
-ul {
-    position: fixed;
-    top: 0;
-    width: 100%;
+.nav-item-right {
+    margin-left: auto;
 }
 
 .page-wrapper {
@@ -342,7 +337,11 @@ table td .question-number {
     text-align: center;
 }
 
-input::-webkit-outer-spin-button,
+
+/* Hide input number arrows */
+
+
+/* input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
@@ -350,7 +349,7 @@ input::-webkit-inner-spin-button {
 
 input[type=number] {
     -moz-appearance: textfield;
-}
+} */
 
 .total-marks-container {
     display: table;
@@ -525,6 +524,29 @@ div.remaining-paper-count {
 .next-button {
     width: fit-content;
     width: -moz-fit-content;
+}
+
+.add-user {
+    width: max-content;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: translateX(-50%);
+    left: 50%;
+    grid-gap: 1em;
+    margin-top: 5em;
+    padding: 2em;
+    background: whitesmoke;
+    border: 2px solid #1c61ce;
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.button__add-user {
+    width: 165.25px;
 }
 
 

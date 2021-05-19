@@ -1,13 +1,7 @@
-<?php 
+<?php
 
-//Connect to MySQL database
-$conn = mysqli_connect("sql111.epizy.com","epiz_28308908","tq4nOlJirw","epiz_28308908_student_database"); 
-          
-// Check connection 
-if($conn === false){ 
-    die("ERROR: Could not connect. " 
-        . mysqli_connect_error()); 
-} 
+// Include database file
+include "database.php";
 
 //Get total no.of uploaded papers
 $result = mysqli_query($conn, "SELECT count(1) FROM student_exam_results");
@@ -32,71 +26,83 @@ $remaining = $total - $checked;
 <html lang="en">
 
 <head>
-<title>Staff Dashboard</title>
+    <title>Staff Dashboard</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <script src="js/update_page.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
-<!--Navigation bar-->
-<div class="nav-bar">
-<ul>
-  <li><a href="admin_login.html">Admin Login</a></li>
-  <li><a class="active" href="index.html">Staff Login</a></li>
-</ul>
-</div>
+    <!--Navigation bar-->
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="student_login.php">Student Login</a></li>
+            <li><a class="active" href="index.html">Staff Login</a></li>
+            <li><a href="admin_login.html">Admin Login</a></li>
+        </ul>
+    </nav>
 
-<!--Background image-->
-<img class="wave" src="img/wave.png">
+    <!--Background image-->
+    <img class="wave" src="img/wave.png">
 
-<!--Page wrapper-->
-<main class="page-wrapper">
+    <!--Page wrapper-->
+    <main class="page-wrapper">
 
-<!--Dashboard Header-->
-<header class="center">
-<h1 >DASHBOARD</h1>
-</header>
+        <!--Dashboard Header-->
+        <header class="center">
+            <h1>DASHBOARD</h1>
+        </header>
 
-<!--Answersheets info-->
-    <div class="answersheets-info-container">
-    <header><h1>COMPUTER SCIENCE</h1></header>
+        <!--Answersheets info-->
+        <div class="answersheets-info-container">
+            <header>
+                <h1>COMPUTER SCIENCE</h1>
+            </header>
 
-    <!--Course info-->
-    <div class="course-info-container">
-        <div class="course-info">
-    <label>
-  Course:
-</label>
-<input type="text" name="dummy1" value="B.Sc" readonly/>
-</div>
-<div class="course-info">
-<label>
-  Specialization:
-</label>
-<input type="text" name="dummy2" value="-" readonly/>
-</div>
-    </div>
+            <!--Course info-->
+            <div class="course-info-container">
+                <div class="course-info">
+                    <label>
+                        Course:
+                    </label>
+                    <input type="text" name="dummy1" value="B.Sc" readonly />
+                </div>
+                <div class="course-info">
+                    <label>
+                        Specialization:
+                    </label>
+                    <input type="text" name="dummy2" value="-" readonly />
+                </div>
+            </div>
 
-    <!--Paper count info-->
-    <div class="paper-count-container">
-        <div class="uploaded-paper-count"><p>Uploaded</p>
-        <p><?php echo $total; ?></p></div>
-        <div class="checked-paper-count"><p>Checked</p>
-        <p><?php echo $checked; ?></p></div>
-        <div class="remaining-paper-count"><p>Remaining</p>
-        <p><?php echo $remaining; ?></p></div>
-    </div>
+            <!--Paper count info-->
+            <div class="paper-count-container">
+                <div class="uploaded-paper-count">
+                    <p>Uploaded</p>
+                    <p><?php echo $total; ?></p>
+                </div>
+                <div class="checked-paper-count">
+                    <p>Checked</p>
+                    <p><?php echo $checked; ?></p>
+                </div>
+                <div class="remaining-paper-count">
+                    <p>Remaining</p>
+                    <p><?php echo $remaining; ?></p>
+                </div>
+            </div>
 
-    <!--Check papers button-->
-    <div class="check-papers-button">
-        <a href="staff_dashboard_2.php" class="button">Check Papers</a>
-    </div>
-    </div>
+            <!--Check papers button-->
+            <div class="check-papers-button">
+                <a href="staff_dashboard_2.php" class="button">Check Papers</a>
+            </div>
+        </div>
 
     </main>
 </body>
+
 </html>

@@ -6,55 +6,38 @@ $file = $_FILES["file"];
 // Uploading in "uplaods" folder
 move_uploaded_file($file["tmp_name"], "uploads/" . $file["name"]);
 
-$conn = mysqli_connect("sql111.epizy.com","epiz_28308908","tq4nOlJirw","epiz_28308908_student_database"); 
-          
-        // Check connection 
-        if($conn === false){ 
-            die("ERROR: Could not connect. " 
-                . mysqli_connect_error()); 
-        } 
-          
-        // Assign values to data in MySQL table 
-        $is_checked ="No"  ; 
-        $marks = 0;
-        $attendance = "Present";
-                 
-        // Performing insert query execution 
-        // here our table name is student_exam_results 
-        $sql = "INSERT INTO student_exam_results (is_checked,marks,attendance) VALUES ('$is_checked','$marks','$attendance')"; 
-          
-        if(mysqli_query($conn, $sql)){ 
-            echo "<h3>data stored in a database successfully." 
-                . " Please browse your ftpupload.net php my admin" 
-                . " to view the updated data</h3>";  
-                      } else{ 
-            echo "ERROR: Hush! Sorry $sql. " 
-                . mysqli_error($conn); 
-        } 
+// Include database file
+include "database.php";
 
-        // Close connection 
-mysqli_close($conn); 
+// Assign values to data in MySQL table 
+$is_checked = "No";
+$marks = 0;
+$attendance = "Present";
 
-//Connect Again
-$conn = mysqli_connect("sql111.epizy.com","epiz_28308908","tq4nOlJirw","epiz_28308908_student_database"); 
-          
-        // Check connection 
-        if($conn === false){ 
-            die("ERROR: Could not connect. " 
-                . mysqli_connect_error()); 
-        } 
+// Performing insert query execution 
+// here our table name is student_exam_results 
+$sql = "INSERT INTO student_exam_results (is_checked,marks,attendance) VALUES ('$is_checked','$marks','$attendance')";
 
-        //Get id of last entry in database
-        $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
+if (mysqli_query($conn, $sql)) {
+    echo "<h3>data stored in a database successfully."
+        . " Please browse your ftpupload.net php my student"
+        . " to view the updated data</h3>";
+} else {
+    echo "ERROR: Hush! Sorry $sql. "
+        . mysqli_error($conn);
+}
 
-                if (mysqli_num_rows($result) > 0) {
-           $last_id = mysqli_fetch_row($result);
+//Get id of last entry in database
+$result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
 
-           //Store last id in variable
-$maxId = $last_id[0];
+if (mysqli_num_rows($result) > 0) {
+    $last_id = mysqli_fetch_row($result);
 
-           //HTML Content of Evaluation Page
-$text = "<!DOCTYPE html>
+    //Store last id in variable
+    $maxId = $last_id[0];
+
+    //HTML Content of Evaluation Page
+    $text = "<!DOCTYPE html>
 <html lang='en'>
 
 <head>
@@ -74,12 +57,12 @@ $text = "<!DOCTYPE html>
 
 <div class='nav-bar'>
 <ul>
-  <li><a href='../admin_login.html'>Admin Login</a></li>
+  <li><a href='../student_login.php'>Student Login</a></li>
   <li><a class='active' href='../index.html'>Staff Login</a></li>
 </ul>
 </div>
 
-<input type='number' name='id' id='id' value ='".$maxId."' readonly class='paper-id'>
+<input type='number' name='id' id='id' value ='" . $maxId . "' readonly class='paper-id'>
 
 <main>
 <img class='wave' src='../img/wave.png'>
@@ -128,7 +111,7 @@ $text = "<!DOCTYPE html>
             </tr>
         </table>
         <div class ='finish-paper-form-container'>
-        <form action='../send_marks.php?id=".$maxId."' method='POST'>
+        <form action='../send_marks.php?id=" . $maxId . "' method='POST'>
         <div class='total-marks-container'>
             <label for='total-marks'>    
 Total Score (Out of 50):            
@@ -137,7 +120,7 @@ Total Score (Out of 50):
             </div>
             <div class='finalize-paper-buttons-container'>
             <input id='finish-paper' type='submit' value='Finish Paper' class='button'>
-            <a href='../delete.php?name=".$file["name"]."&id=".$maxId."' class='button reject-paper-button'>Reject Paper</a>
+            <a href='../delete.php?name=" . $file["name"] . "&id=" . $maxId . "' class='button reject-paper-button'>Reject Paper</a>
         </form>
         </div>
             </div>
@@ -146,14 +129,12 @@ Total Score (Out of 50):
 </main>
 </html>";
 
-//Put evaluation form file in folder
-file_put_contents("evaluation_forms/{$file["name"]}.html", $text, FILE_APPEND | LOCK_EX);
-        }
+    //Put evaluation form file in folder
+    file_put_contents("evaluation_forms/{$file["name"]}.html", $text, FILE_APPEND | LOCK_EX);
+}
 
-       // Close connection 
-       mysqli_close($conn); 
+// Close connection 
+mysqli_close($conn);
 
 // Redirecting back
 header("Location: " . $_SERVER["HTTP_REFERER"]);
-
-?>

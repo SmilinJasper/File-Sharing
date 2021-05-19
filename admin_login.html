@@ -2,22 +2,25 @@
 <html>
 
 <head>
-    <title>Admin Login</title>
+    <title>Student Login</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
 
     <!--Navigation bar-->
-    <div class="nav-bar">
-        <ul>
-            <li><a class="admin-login-nav active" href="admin_login.html">Admin Login</a></li>
+    <nav>
+        <ul class="nav-bar">
+            <li><a class="student-login-nav" href="student_login.php">Student Login</a></li>
             <li><a href="index.html">Staff Login</a></li>
+            <li><a class="active" href="admin_login.html">Admin Login</a></li>
         </ul>
-    </div>
+    </nav>
 
     <!--Background images-->
     <img class="wave" src="img/wave.png">
@@ -28,7 +31,7 @@
 
         <!--Login form-->
         <div class="login-content">
-            <form action="admin_dashboard.php" method="POST" class="admin-login-form login-form">
+            <form action="student_dashboard.php" method="POST" class="student-login-form login-form">
                 <img src="img/avatar.svg">
                 <h2 class="title">Welcome</h2>
                 <div class="login-error-message">
@@ -62,7 +65,7 @@
 
     <!--Javascript-->
     <script type="text/javascript" src="js/login_input_animation.js"></script>
-    <script type="text/javascript" src="js/admin_credentials.js"></script>
+    <script type="text/javascript" src="js/student_credentials.js"></script>
 </body>
 
 </html>

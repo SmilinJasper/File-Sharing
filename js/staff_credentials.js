@@ -6,7 +6,7 @@ const usernameInput = document.querySelector(".input-username");
 const passwordInput = document.querySelector(".input-password");
 const loginErrorMessage = document.querySelector(".login-error-message");
 
-// Object to store Admin credentials
+// Object to store Student credentials
 
 const staffCredentials = {
     username: "staff1",
