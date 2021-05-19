@@ -16,9 +16,9 @@
     <!--Navigation bar-->
     <nav>
         <ul class="nav-bar">
-            <li><a class=" student-login-nav active" href="student_login.php">Student Login</a></li>
-            <li><a href="index.html">Staff Login</a></li>
-            <li><a href="admin_login.html">Admin Login</a></li>
+            <li><a class=" student-login-nav active" href="index.php">Student Login</a></li>
+            <li><a href="staff_login.php">Staff Login</a></li>
+            <li><a href="admin_login.php">Admin Login</a></li>
             <li class="nav-item-right"><a href="student_logout.php">Logout</a></li>
         </ul>
     </nav>

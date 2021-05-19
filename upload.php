@@ -57,8 +57,8 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class='nav-bar'>
 <ul>
-  <li><a href='../student_login.php'>Student Login</a></li>
-  <li><a class='active' href='../index.html'>Staff Login</a></li>
+  <li><a href='../index.php'>Student Login</a></li>
+  <li><a class='active' href='../staff_login.php'>Staff Login</a></li>
 </ul>
 </div>
 

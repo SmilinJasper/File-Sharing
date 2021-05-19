@@ -111,9 +111,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--Navigation bar-->
     <nav>
         <ul class="nav-bar">
-            <li><a class="student-login-nav" href="student_login.php">Student Login</a></li>
-            <li><a href="index.html">Staff Registration</a></li>
-            <li><a class="active" href="admin_login.html">Admin Login</a></li>
+            <li><a class="student-login-nav" href="index.php">Student Login</a></li>
+            <li><a href="staff_login.php">Staff Registration</a></li>
+            <li><a class="active" href="admin_login.php">Admin Login</a></li>
         </ul>
     </nav>
 
