@@ -108,7 +108,6 @@ form.login-form {
 }
 
 .login-content h2 {
-    margin: 15px 0;
     color: #333;
     text-transform: uppercase;
     font-size: 2.9rem;
@@ -206,8 +205,8 @@ form.login-form {
 }
 
 .login-error-message {
+    margin-bottom: 8px;
     color: red;
-    display: none;
 }
 
 a {
@@ -564,7 +563,6 @@ div.remaining-paper-count {
     }
     .login-content h2 {
         font-size: 2.4rem;
-        margin: 8px 0;
     }
     .img img {
         width: 400px;

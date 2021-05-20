@@ -96,6 +96,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    <script defer type="text/javascript" src="js/login_input_animation.js"></script>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -114,19 +115,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <!--Background images-->
         <img class="wave" src="img/wave.png">
+
         <div class="container">
+
             <div class="img">
                 <img src="img/bg.svg">
             </div>
 
             <!--Login form-->
             <div class="login-content">
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" class="staff-login-form login-form">
+                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST"
+                    class="staff-login-form login-form">
                     <img src="img/avatar.svg">
+
                     <h2 class="title">Welcome</h2>
+
                     <div class="login-error-message">
-                        <p>Please Enter Valid Credentials</p>
+                        <p><?php echo $login_err ?></p>
                     </div>
+
                     <div class="input-div one">
                         <div class="i">
                             <i class="fas fa-user"></i>
@@ -136,6 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input id="input-username" name="username" type="text" class="input input-username">
                         </div>
                     </div>
+
                     <div class="input-div pass">
                         <div class="i">
                             <i class="fas fa-lock"></i>
@@ -145,15 +153,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input id="input-password" name="password" type="password" class="input input-password">
                         </div>
                     </div>
+
                     <a href="#">Forgot Password?</a>
+
                     <input id="login" type="submit" class="btn login" value="login">
+
                     <a href="staff_dashboard_1.php" class="btn login guest-login">Login as Guest</a>
                 </form>
+
             </div>
+
         </div>
 
-        <!--Javascript-->
-        <script type="text/javascript" src="js/login_input_animation.js"></script>
 </body>
 
 </html>
