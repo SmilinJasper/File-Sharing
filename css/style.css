@@ -2,11 +2,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
+}
+
+button {
+    border: none;
 }
 
 .nav-bar {
@@ -17,7 +21,7 @@ body {
     padding: 0;
     position: fixed;
     top: 0;
-    background-color: #1E6AE1;
+    background-color: #1e6ae1;
 }
 
 li {
@@ -28,18 +32,36 @@ li {
     float: left;
 }
 
-.nav-bar a {
+a,
+.nav-bar button {
+    display: block;
+    text-align: right;
+    text-decoration: none;
+    color: #999;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+a:hover,
+.nav-bar button:hover {
+    color: #1e6ae1;
+}
+
+.nav-bar a,
+.nav-bar button {
     display: block;
     padding: 8px;
     background-color: #dddddd;
 }
 
-.nav-bar a:hover {
+.nav-bar a:hover,
+.nav-bar button:hover {
     background: rgb(234, 234, 234);
+    cursor: pointer;
 }
 
 a.active {
-    background: #eee
+    background: #eee;
 }
 
 li {
@@ -96,7 +118,7 @@ header.center {
 
 .img img {
     width: 500px;
-    filter: hue-rotate(45deg)
+    filter: hue-rotate(45deg);
 }
 
 form.login-form {
@@ -134,7 +156,7 @@ form.login-form {
 }
 
 .i i {
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .input-div>div {
@@ -149,18 +171,18 @@ form.login-form {
     transform: translateY(-50%);
     color: #999;
     font-size: 18px;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .input-div:before,
 .input-div:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -2px;
     width: 0%;
     height: 2px;
-    background-color: #1E6AE1;
-    transition: .4s;
+    background-color: #1e6ae1;
+    transition: 0.4s;
 }
 
 .input-div:before {
@@ -182,7 +204,7 @@ form.login-form {
 }
 
 .input-div.focus>.i>i {
-    color: #1E6AE1;
+    color: #1e6ae1;
 }
 
 .input-div>div>input {
@@ -197,7 +219,7 @@ form.login-form {
     padding: 0.5rem 0.7rem;
     font-size: 1.2rem;
     color: #555;
-    font-family: 'poppins', sans-serif;
+    font-family: "poppins", sans-serif;
 }
 
 .input-div.pass {
@@ -209,19 +231,6 @@ form.login-form {
     color: red;
 }
 
-a {
-    display: block;
-    text-align: right;
-    text-decoration: none;
-    color: #999;
-    font-size: 0.9rem;
-    transition: .3s;
-}
-
-a:hover {
-    color: #1E6AE1;
-}
-
 .btn {
     display: block;
     width: 100%;
@@ -229,15 +238,15 @@ a:hover {
     border-radius: 25px;
     outline: none;
     border: none;
-    background-image: linear-gradient(to right, #1E6AE1, #36c1c8, #1c61ce);
+    background-image: linear-gradient(to right, #1e6ae1, #36c1c8, #1c61ce);
     background-size: 200%;
     font-size: 1.2rem;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     text-transform: uppercase;
     margin: 1rem 0;
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn:hover {
@@ -248,7 +257,7 @@ a:hover {
     text-align: center;
     display: grid;
     place-items: center;
-    background-image: linear-gradient(to right, #4B88E7, #5ECED3, #4B88E7);
+    background-image: linear-gradient(to right, #4b88e7, #5eced3, #4b88e7);
 }
 
 .guest-login:hover {
@@ -311,10 +320,10 @@ a:hover {
     -webkit-appearance: none;
     line-height: 1;
     padding: 8px 12px;
-    -o-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     outline: none;
 }
 
@@ -486,7 +495,7 @@ div.remaining-paper-count {
 
 .evaluation-form-container {
     width: 25%;
-    font-size: .9em;
+    font-size: 0.9em;
 }
 
 .evaluation-table {
@@ -594,11 +603,11 @@ div.remaining-paper-count {
     .finalize-paper-buttons-container {
         flex-direction: column;
         align-items: center;
-        grid-gap: .4em;
+        grid-gap: 0.4em;
     }
 }
 
-@media screen and (max-width:730px) {
+@media screen and (max-width: 730px) {
     .evaluation-page-wrapper {
         flex-direction: column;
         margin-top: 3rem;

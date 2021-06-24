@@ -15,12 +15,14 @@
 
     <!--Navigation bar-->
     <nav>
-        <ul class="nav-bar">
-            <li><a class=" student-login-nav active" href="index.php">Student Login</a></li>
-            <li><a href="staff_login.php">Staff Login</a></li>
-            <li><a href="admin_login.php">Admin Login</a></li>
-            <li class="nav-item-right"><a href="student_logout.php">Logout</a></li>
-        </ul>
+        <form>
+            <ul class="nav-bar">
+                <li><a class="active" href="index.php">Student Login</a></li>
+                <li><button type="submit" formaction="logout_to_staff_login.php">Staff Login</button></li>
+                <li><button type="submit" formaction="logout_to_admin_login.php">Admin Login</button></li>
+                <li class="nav-item-right"><button type="submit" formaction="logout_to_student_login.php">Logout</button></li>
+            </ul>
+        </form>
     </nav>
 
     <!--Background image-->
