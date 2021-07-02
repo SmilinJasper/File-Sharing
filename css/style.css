@@ -377,6 +377,9 @@ input[type=number] {
     background: transparent;
     border: none;
     outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    margin: 0;
 }
 
 .upload-form-body {
