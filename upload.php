@@ -73,7 +73,7 @@ if (mysqli_num_rows($result) > 0) {
 
 <div class = 'evaluation-page-wrapper'>
 <div class='embedded-pdf-container'>
-    <embed src='../uploads/{$file["name"]}' width='100%' height='100%'></embed>
+    <embed src='../uploads/{$file["name"]}' width='100%' height='100%' title='answersheet'></embed>
 </div>
 
 <div class='evaluation-form-container'>
