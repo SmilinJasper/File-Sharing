@@ -58,10 +58,10 @@ if (mysqli_num_rows($result) > 0) {
 <nav>
     <form>
         <ul class='nav-bar'>
-            <li><button type='submit' formaction='logout_to_student_login.php'>Student Login</button></li>
-            <li><a class='active' href='staff_login.php'>Staff Login</a></li>
-            <li><button type='submit' formaction='logout_to_admin_login.php'>Admin Login</button></li>
-            <li class='nav-item-right'><button type='submit' formaction='logout_to_staff_login.php'>Logout</button></li>
+            <li><button type='submit' formaction='../logout_to_student_login.php'>Student Login</button></li>
+            <li><a class='active' href='../staff_login.php'>Staff Login</a></li>
+            <li><button type='submit' formaction='../logout_to_admin_login.php'>Admin Login</button></li>
+            <li class='nav-item-right'><button type='submit' formaction='../logout_to_staff_login.php'>Logout</button></li>
         </ul>
     </form>
 </nav>
