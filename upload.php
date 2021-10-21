@@ -18,15 +18,6 @@ $attendance = "Present";
 // here our table name is student_exam_results 
 $sql = "INSERT INTO student_exam_results (is_checked,marks,attendance) VALUES ('$is_checked','$marks','$attendance')";
 
-if (mysqli_query($conn, $sql)) {
-    echo "<h3>data stored in a database successfully."
-        . " Please browse your ftpupload.net php my student"
-        . " to view the updated data</h3>";
-} else {
-    echo "ERROR: Hush! Sorry $sql. "
-        . mysqli_error($conn);
-}
-
 //Close MySQL Connection
 mysqli_close($conn);
 
