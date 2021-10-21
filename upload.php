@@ -27,6 +27,19 @@ if (mysqli_query($conn, $sql)) {
         . mysqli_error($conn);
 }
 
+//Close MySQL Connection
+mysqli_close($conn);
+
+//Reopen MySQL Connection
+if (mysqli_query($conn, $sql)) {
+    echo "<h3>data stored in a database successfully."
+        . " Please browse your ftpupload.net php my student"
+        . " to view the updated data</h3>";
+} else {
+    echo "ERROR: Hush! Sorry $sql. "
+        . mysqli_error($conn);
+}
+
 //Get id of last entry in database
 $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
 
@@ -70,6 +83,8 @@ if (mysqli_num_rows($result) > 0) {
 
 <main>
 <img class='wave' src='../img/wave.png'>
+
+<a class='button back-button' href='staff_dashboard_1.php'>Back</a>
 
 <div class = 'evaluation-page-wrapper'>
 <div class='embedded-pdf-container'>
