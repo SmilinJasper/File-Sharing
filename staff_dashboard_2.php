@@ -36,7 +36,7 @@
         </header>
 
         <!--Back button-->
-        <div class="back-button"><input type="button" class="button" value="Back" onclick="history.back()"></div>
+        <a class="button back-button" href="staff_dashboard_1.php">Back</a>
 
         <?php
 
