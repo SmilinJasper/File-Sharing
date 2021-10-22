@@ -30,16 +30,6 @@ if (mysqli_query($conn, $sql)) {
 //Close MySQL Connection
 mysqli_close($conn);
 
-//Reopen MySQL Connection
-if (mysqli_query($conn, $sql)) {
-    echo "<h3>data stored in a database successfully."
-        . " Please browse your ftpupload.net php my student"
-        . " to view the updated data</h3>";
-} else {
-    echo "ERROR: Hush! Sorry $sql. "
-        . mysqli_error($conn);
-}
-
 //Get id of last entry in database
 $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
 
