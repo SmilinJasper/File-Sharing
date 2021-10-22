@@ -30,6 +30,9 @@ if (mysqli_query($conn, $sql)) {
 //Close MySQL Connection
 mysqli_close($conn);
 
+// Include database file again
+include "database.php";
+
 //Get id of last entry in database
 $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
 
