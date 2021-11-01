@@ -33,6 +33,10 @@ mysqli_close($conn);
 // Include database file again
 include "database.php";
 
+//Get all info from database table
+$sql = "SELECT * FROM student_exam_results";
+$result = mysqli_query($conn, $sql);
+
 //Get id of last entry in database
 $result = mysqli_query($conn, 'SELECT id FROM student_exam_results ORDER BY id DESC LIMIT 1');
 
@@ -41,6 +45,9 @@ if (mysqli_num_rows($result) > 0) {
 
     //Store last id in variable
     $maxId = $last_id[0];
+
+    // Close connection 
+    mysqli_close($conn);
 
     //HTML Content of Evaluation Page
     $text = "<!DOCTYPE html>
@@ -144,9 +151,6 @@ Total Score (Out of 50):
     //Put evaluation form file in folder
     file_put_contents("evaluation_forms/{$file["name"]}.html", $text, FILE_APPEND | LOCK_EX);
 }
-
-// Close connection 
-mysqli_close($conn);
 
 // Redirecting back
 header("Location: " . $_SERVER["HTTP_REFERER"]);
